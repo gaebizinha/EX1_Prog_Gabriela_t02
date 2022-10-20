@@ -1,12 +1,27 @@
 #include <iostream>
 #include <string>
-
+using namespace std;
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
 
+float percentual(float v, float min, float max) {
+	return float((float(v - min) / float(max - min)) * 100);
+}
+
+
+
 // 2 - Faça uma função que simule a leitura de um sensor lendo o 
 // valor do teclado ao final a função retorna este valor
+int leitor()
+{
+    std::cout << "digite um número: "; 
 
+    int vdigitado{ }; 
+    std::cin >> vdigitado; //pega o número digitado e armazena na variável vdigitado
+
+    std::cout << "O valor digitado foi... " << vdigitado << '\n';
+    return 0;
+}
 // 3 - Faça uma função que armazena uma medida inteira qualquer 
 // em um vetor fornecido. Note que como C não possui vetores 
 // nativos da linguagem, lembre-se que você precisa passar o 
@@ -84,4 +99,5 @@ int main(int argc, char** argv) {
 	percorre(vetorMov,posAtualVet);
 	
 	return 0;
+
 }
