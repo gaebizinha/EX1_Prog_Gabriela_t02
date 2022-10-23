@@ -1,16 +1,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+//nomeando variaveis 
 char tecla{};
+#define valorMax {};
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
 
 float percentual(float v, float min, float max) {
 	return float((float(v - min) / float(max - min)) * 100);
 }
-
-
 
 // 2 - Faça uma função que simule a leitura de um sensor lendo o 
 // valor do teclado ao final a função retorna este valor
@@ -31,7 +30,14 @@ int leitor()
 // Evite também que, por acidente, um valor seja escrito em 
 // uma área de memória fora do vetor
 
-
+int armazena(int medida, int ultimaPos, int vetor[], int valorMax){//não consegui terminar 
+  if (valorMax <= ultimaPos +1){
+    cout << "Erro";
+  }else{
+    vetor[ultimaPos + 1] = medida;
+  }
+  return ultimaPos + 1;
+}
 
 // 4 - Faça uma função que recebe um vetor com 4 posições que contém 
 // o valor da distância de um pequeno robô até cada um dos seus 4 lados.
@@ -39,18 +45,23 @@ int leitor()
 // de maior distância ("Direita", "Esquerda", "Frente", "Tras") e a 
 // segunda é esta maior distância.
 
-
+//não consegui fazer o código mas por lógica eu faria:
+//iria criar uma lista no início vazia;
+//depois criaria um cout<< digite 4 números:
+//em seguida iria realocar cada item digitado dentro da lista criada no inicio com scanf("%i %i %i %i", &direita, &esquerda, &cima, &tras);
+//por fim eu iria criar um for que iria passar em cada item da lista criada e dentro dele iria colocar um if
+// com o if eu iria comparar cada "i" digitado, e por fim eu iria printar qual a direção (dependendo de qual foi o maior número digitado)
 
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e 
 // retorna verdadeiro ou falso
 int continua() {
-  cout << "\nDigite'P' para PARAR e'C' para CONTINUAR: "; 
+  cout << "\nDigite'P' para PARAR e'C' para CONTINUAR: "; // input
   cin >> tecla;  
-  if(toupper(tecla) != 'P') {
+  if(toupper(tecla) != 'P') { //caso digite P...
     cout << "\nFalse ";
     }
-  else {
+  else { //caso digite algo diferente 
    cout << "\nTrue ";
   }
 }
