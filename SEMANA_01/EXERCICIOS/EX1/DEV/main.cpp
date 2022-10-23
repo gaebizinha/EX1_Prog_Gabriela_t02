@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+char tecla{};
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
 
@@ -42,7 +44,16 @@ int leitor()
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e 
 // retorna verdadeiro ou falso
-
+int continua() {
+  cout << "\nDigite'P' para PARAR e'C' para CONTINUAR: "; 
+  cin >> tecla;  
+  if(toupper(tecla) != 'P') {
+    cout << "\nFalse ";
+    }
+  else {
+   cout << "\nTrue ";
+  }
+}
 
 // 6 - A função abaixo (que está incompleta) vai "dirigindo" virtualmente um robô 
 // e através de 4 sensores em cada um dos 4 pontos do robo ("Direita", "Esquerda", 
